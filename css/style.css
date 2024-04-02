@@ -1,0 +1,51 @@
+* {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #e6e0ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+}
+
+#anim {
+    background-image: url(../images/paisaje.png);
+    background-size: cover;
+    
+    width: 100vw;
+    aspect-ratio: 356/126;
+
+    position: relative;
+
+    animation-name: simple-animation;
+    animation-duration: 20s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+#nube {
+    width: 15vw;
+    position: absolute;
+}
+
+#nube>img {
+    width: 100%;
+    display: none;
+}
+
+@keyframes simple-animation {
+    0% {
+        #nube {
+            left: 0px;
+        }
+
+        #nube>img {
+            display: block;
+        }
+    }
+    
+}
