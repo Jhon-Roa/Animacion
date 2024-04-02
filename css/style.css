@@ -1,5 +1,5 @@
 * {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body {
@@ -16,36 +16,165 @@ body {
     
     width: 100vw;
     aspect-ratio: 356/126;
+    z-index: -2;
 
     position: relative;
-
-    animation-name: simple-animation;
-    animation-duration: 20s;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-direction: alternate;
 }
 
 #nube {
     width: 15vw;
+    height: 100%;
+    top: 0;
+    right: -20vw;
     position: absolute;
+
+    animation: nube-animation 20s linear infinite;
 }
 
 #nube>img {
+    background-color: #e6e0ec;
+
     width: 100%;
-    display: none;
 }
 
-@keyframes simple-animation {
-    0% {
-        #nube {
-            left: 0px;
-        }
+#lluvia {
+    background-image: url(../images/lluvia.png);
+    background-size: contain;
 
-        #nube>img {
-            display: block;
-        }
+    animation: lluvia-animation 20s linear infinite;
+    opacity: 0;
+
+    width: 100%;
+    height: 200%;
+    z-index: -1;
+
+    position: absolute;
+    top: -100%;
+}
+
+#sol {
+    position: absolute;
+    top: 5%;
+    right: 5vw;
+    
+    width: 15vw;
+
+    animation: sol-animation 20s linear infinite;
+    opacity: 0;
+}
+
+#sol>img {
+    width: 100%;
+}
+
+#flor {
+    position: absolute;
+    right: 43vw;
+    bottom: -50%;
+
+    width: 15vw;
+
+    animation: flor-animation 20s linear infinite;
+    opacity: 0;
+}
+
+#flor>img {
+    width: 100%;
+}
+
+#anim>#anim-p {
+    color: red;
+    font-size: 2rem;
+    font-family: cursive;
+
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: text-animation 20s linear infinite;
+    opacity: 0;
+}
+
+@keyframes nube-animation {
+    0% {
+        right: -20vw;
+    }
+
+    25% {
+        right: 43vw;
+    }
+
+    50% {
+        right: 43vw;
+    }
+
+    60% {
+        right: 120vw;
+    }
+    100% {
+        right: 120vw;
+    }
+    }
+
+@keyframes lluvia-animation {
+    24% {
+        opacity: 0;
+    }
+    25% {
+        top: -100%;
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        top: 200%;
+    }
+}
+
+@keyframes sol-animation {
+    70% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flor-animation {
+    60% {
+        bottom: -50%;
+        opacity: 1;
+    }
+
+    70% {
+        bottom: 0;
+        opacity: 1;
     }
     
+    100% {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes text-animation {
+    70% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
