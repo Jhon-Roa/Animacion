@@ -1,5 +1,6 @@
 * {
-    overflow: hidden;
+    overflow-x: hidden;
+    margin: 0;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
     top: 0;
     right: -20vw;
     position: absolute;
+    overflow: hidden;
 
     animation: nube-animation 20s linear infinite;
 }
