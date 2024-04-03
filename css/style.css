@@ -104,7 +104,7 @@ body {
         right: -20vw;
     }
 
-    25% {
+    23% {
         right: 43vw;
     }
 
@@ -178,5 +178,17 @@ body {
 
     100% {
         opacity: 1;
+    }
+}
+
+@media (width < 750px) {
+    #anim>#anim-p {
+        font-size: 1rem;
+    }
+}
+
+@media (width > 500px) {
+    #anim {
+        height: 100vh;
     }
 }
